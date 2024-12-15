@@ -24,7 +24,7 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
       state.error= null;
     });
 
-    builder.addCase(fetchPosts.pending, (state, action) => {
+    builder.addCase(fetchPosts.rejected, (state, action) => {
       state.isLoading = false;
       state.posts=[];
       state.error=action.error.message;
